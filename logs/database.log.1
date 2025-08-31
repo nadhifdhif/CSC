@@ -1,0 +1,624 @@
+2025-08-22 16:43:00,376 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `status` varchar(140), MODIFY `title` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `total_billed_hours` varchar(140)
+2025-08-22 16:43:00,614 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0
+2025-08-22 16:43:00,646 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-22 16:43:00,681 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name`, DROP INDEX `status_index`
+2025-08-22 16:43:00,826 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-22 16:43:00,856 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `parent_task_index`, DROP INDEX `priority_index`
+2025-08-22 16:43:01,082 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-25 13:50:24,093 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-25 13:50:25,126 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-25 13:50:26,323 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0
+2025-08-25 13:50:26,520 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `total_billed_amount` decimal(21,9) not null default 0
+2025-08-25 13:50:26,882 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-25 13:50:26,951 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-25 13:50:27,009 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-25 13:50:27,265 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0
+2025-08-25 13:50:27,310 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-25 13:50:27,598 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-25 13:50:28,467 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-25 13:50:28,689 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `title` varchar(140)
+2025-08-25 13:50:29,114 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0
+2025-08-25 13:50:29,184 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-25 13:50:29,242 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-25 13:50:29,449 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-25 13:50:29,492 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `parent_task_index`, DROP INDEX `priority_index`
+2025-08-25 13:50:30,415 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `deduction_based_of_late` decimal(21,9) not null default 0, MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0, MODIFY `holiday_allowance` decimal(21,9) not null default 0, MODIFY `currency_ffbr` decimal(21,9) not null default 0, MODIFY `bonuses` decimal(21,9) not null default 0, MODIFY `deduction` decimal(21,9) not null default 0, MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-25 13:50:27,811 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-25 15:33:56,648 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `days_present` varchar(140), MODIFY `currency_ffbr` decimal(21,9) not null default 0, MODIFY `days_absent` varchar(140), MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0, MODIFY `holiday_allowance` decimal(21,9) not null default 0, MODIFY `deduction_based_of_late` decimal(21,9) not null default 0, MODIFY `official_duty_travel` varchar(140), MODIFY `deduction` decimal(21,9) not null default 0, MODIFY `main_salary` decimal(21,9) not null default 0, MODIFY `bonuses` decimal(21,9) not null default 0
+2025-08-25 15:43:17,348 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `bonuses` decimal(21,9) not null default 0, MODIFY `currency_ffbr` decimal(21,9) not null default 0, MODIFY `deduction_based_of_late` decimal(21,9) not null default 0, MODIFY `deduction` decimal(21,9) not null default 0, MODIFY `main_salary` decimal(21,9) not null default 0, MODIFY `holiday_allowance` decimal(21,9) not null default 0, MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0
+2025-08-25 15:43:24,791 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `holiday_allowance` decimal(21,9) not null default 0, MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0, MODIFY `deduction` decimal(21,9) not null default 0, MODIFY `bonuses` decimal(21,9) not null default 0, MODIFY `main_salary` decimal(21,9) not null default 0, MODIFY `deduction_based_of_late` decimal(21,9) not null default 0, MODIFY `currency_ffbr` decimal(21,9) not null default 0
+2025-08-25 16:08:54,797 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-25 16:08:56,437 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-25 16:08:57,630 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0
+2025-08-25 16:08:58,037 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `title` varchar(140) default '{employee_name}', MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `exchange_rate` decimal(21,9) not null default 1.0
+2025-08-25 16:08:56,189 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `status` varchar(140) default 'Open', MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-25 16:08:56,327 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-25 16:08:56,494 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-25 16:08:56,753 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0
+2025-08-25 16:08:56,907 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-25 16:08:57,341 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-25 16:08:58,709 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `actual_hours` decimal(21,9) not null default 0
+2025-08-25 16:08:59,079 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `title` varchar(140)
+2025-08-25 16:08:59,554 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0
+2025-08-25 16:08:59,658 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-25 16:08:59,760 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-25 16:09:00,061 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-25 16:09:00,162 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-25 16:09:00,664 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `currency_ffbr` decimal(21,9) not null default 0, MODIFY `holiday_allowance` decimal(21,9) not null default 0, MODIFY `deduction` decimal(21,9) not null default 0, MODIFY `main_salary` decimal(21,9) not null default 0, MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0, MODIFY `bonuses` decimal(21,9) not null default 0, MODIFY `deduction_based_of_late` decimal(21,9) not null default 0
+2025-08-25 16:09:00,919 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-25 16:34:22,820 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `bonuses` decimal(21,9) not null default 0, MODIFY `deduction_based_of_late` decimal(21,9) not null default 0, MODIFY `main_salary` decimal(21,9) not null default 0, MODIFY `deduction` decimal(21,9) not null default 0, MODIFY `holiday_allowance` decimal(21,9) not null default 0, MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0, MODIFY `currency_ffbr` decimal(21,9) not null default 0
+2025-08-25 16:45:32,029 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-25 16:45:32,800 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-25 16:45:33,700 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0
+2025-08-25 16:45:33,932 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `title` varchar(140) default '{employee_name}', MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0
+2025-08-25 16:45:34,288 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `percent_complete` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-25 16:45:34,310 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-25 16:45:34,332 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-25 16:45:34,561 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0
+2025-08-25 16:45:34,606 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-25 16:45:34,942 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-25 16:45:35,906 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-25 16:45:36,065 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `status` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `title` varchar(140), MODIFY `total_billed_hours` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0
+2025-08-25 16:45:36,308 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0
+2025-08-25 16:45:36,326 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-25 16:45:36,343 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-25 16:45:36,502 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `expected_time` decimal(21,9) not null default 0
+2025-08-25 16:45:36,525 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `parent_task_index`, DROP INDEX `priority_index`
+2025-08-25 16:45:36,777 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `main_salary` decimal(21,9) not null default 0, MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0, MODIFY `currency_ffbr` decimal(21,9) not null default 0, MODIFY `deduction` decimal(21,9) not null default 0, MODIFY `deduction_based_of_late` decimal(21,9) not null default 0, MODIFY `holiday_allowance` decimal(21,9) not null default 0, MODIFY `bonuses` decimal(21,9) not null default 0
+2025-08-25 16:45:36,904 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-25 16:54:59,592 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-25 16:55:00,500 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-25 16:55:01,461 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0
+2025-08-25 16:55:01,625 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0
+2025-08-25 16:55:01,982 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-25 16:55:02,003 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-25 16:55:02,026 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-25 16:55:02,194 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0
+2025-08-25 16:55:02,213 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-25 16:55:02,444 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-25 16:55:03,201 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-25 16:55:03,353 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` varchar(140), MODIFY `status` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `title` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0
+2025-08-25 16:55:03,634 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0
+2025-08-25 16:55:03,655 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-25 16:55:03,675 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name`, DROP INDEX `status_index`
+2025-08-25 16:55:03,840 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-25 16:55:03,865 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `parent_task_index`, DROP INDEX `priority_index`
+2025-08-25 16:55:04,111 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-25 16:57:55,916 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-25 16:57:56,736 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-25 16:57:57,620 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0
+2025-08-25 16:57:57,802 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0
+2025-08-25 16:57:58,146 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-25 16:57:58,172 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-25 16:57:58,198 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-25 16:57:58,387 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0
+2025-08-25 16:57:58,416 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-25 16:57:58,767 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-25 16:57:59,526 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `actual_hours` decimal(21,9) not null default 0
+2025-08-25 16:57:59,701 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `total_billed_hours` varchar(140), MODIFY `status` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `title` varchar(140)
+2025-08-25 16:58:00,002 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0
+2025-08-25 16:58:00,021 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-25 16:58:00,037 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-25 16:58:00,203 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `expected_time` decimal(21,9) not null default 0
+2025-08-25 16:58:00,222 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-25 16:58:00,482 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-25 17:04:47,368 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-25 17:04:48,250 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-25 17:04:48,891 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0
+2025-08-25 17:04:49,056 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0
+2025-08-25 17:04:49,408 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-25 17:04:49,444 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-25 17:04:49,487 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-25 17:04:49,700 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0
+2025-08-25 17:04:49,721 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-25 17:04:50,030 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-25 17:04:50,689 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-25 17:04:50,841 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `status` varchar(140), MODIFY `total_billed_hours` varchar(140), MODIFY `title` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0
+2025-08-25 17:04:51,138 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `status` varchar(140)
+2025-08-25 17:04:51,162 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-25 17:04:51,182 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name`, DROP INDEX `status_index`
+2025-08-25 17:04:51,347 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `expected_time` decimal(21,9) not null default 0
+2025-08-25 17:04:51,362 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-25 17:04:51,615 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-26 10:27:47,367 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-26 10:27:48,500 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-26 10:27:49,736 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0
+2025-08-26 10:27:49,926 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `title` varchar(140) default '{employee_name}', MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0
+2025-08-26 10:27:50,319 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-26 10:27:50,342 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-26 10:27:50,362 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-26 10:27:48,020 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0
+2025-08-26 10:27:48,045 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-26 10:27:48,305 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-26 10:27:49,321 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `actual_hours` decimal(21,9) not null default 0
+2025-08-26 10:27:49,491 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `status` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `total_billed_hours` varchar(140), MODIFY `title` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0
+2025-08-26 10:27:49,821 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0
+2025-08-26 10:27:49,843 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-26 10:27:49,865 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-26 10:27:50,039 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-26 10:27:50,056 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-26 10:27:50,290 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-26 10:39:49,054 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-26 10:39:49,992 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-26 10:39:50,691 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0
+2025-08-26 10:39:50,849 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `status` varchar(140) default 'Draft', MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `total_billed_amount` decimal(21,9) not null default 0
+2025-08-26 10:39:51,131 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `estimated_costing` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-26 10:39:51,148 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-26 10:39:51,164 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-26 10:39:51,337 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0
+2025-08-26 10:39:51,357 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-26 10:39:51,575 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-26 10:39:52,529 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-26 10:39:52,745 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `title` varchar(140), MODIFY `status` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0
+2025-08-26 10:39:53,104 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0
+2025-08-26 10:39:53,132 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-26 10:39:53,167 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-26 10:39:53,341 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-26 10:39:53,360 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-26 10:39:53,615 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-26 10:58:35,148 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-26 10:58:36,044 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-26 10:58:36,688 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0
+2025-08-26 10:58:36,845 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}'
+2025-08-26 10:58:37,120 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-26 10:58:37,138 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-26 10:58:37,155 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-26 10:58:37,330 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0
+2025-08-26 10:58:37,348 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-26 10:58:37,598 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-26 10:58:38,292 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-26 10:58:38,453 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `title` varchar(140), MODIFY `total_billed_hours` varchar(140)
+2025-08-26 10:58:38,695 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0
+2025-08-26 10:58:38,711 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-26 10:58:38,728 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-26 10:58:38,866 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `expected_time` decimal(21,9) not null default 0
+2025-08-26 10:58:38,882 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-26 10:58:39,280 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-26 11:05:09,494 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCheck In Attendance` ADD COLUMN `email` varchar(140)
+2025-08-26 11:12:17,023 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-26 11:12:17,761 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-26 11:12:18,404 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0
+2025-08-26 11:12:18,563 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `title` varchar(140) default '{employee_name}', MODIFY `status` varchar(140) default 'Draft', MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0
+2025-08-26 11:12:18,885 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-26 11:12:18,907 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-26 11:12:18,927 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-26 11:12:19,117 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0
+2025-08-26 11:12:19,138 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-26 11:12:19,394 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-26 11:12:20,195 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-26 11:12:20,386 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `status` varchar(140), MODIFY `title` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `total_billed_hours` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0
+2025-08-26 11:12:20,671 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-26 11:12:20,697 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-26 11:12:20,725 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name`, DROP INDEX `status_index`
+2025-08-26 11:12:20,921 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-26 11:12:20,944 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-26 11:12:21,307 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-26 11:17:16,457 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-26 11:17:17,230 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-26 11:17:18,094 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0
+2025-08-26 11:17:18,251 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `status` varchar(140) default 'Draft', MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0
+2025-08-26 11:17:18,532 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-26 11:17:18,549 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-26 11:17:18,566 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-26 11:17:18,744 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0
+2025-08-26 11:17:18,776 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-26 11:17:19,077 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-26 11:17:20,014 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `actual_hours` decimal(21,9) not null default 0
+2025-08-26 11:17:20,206 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `total_billed_hours` varchar(140), MODIFY `status` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `title` varchar(140)
+2025-08-26 11:17:20,487 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0
+2025-08-26 11:17:20,504 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-26 11:17:20,524 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-26 11:17:20,698 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `expected_time` decimal(21,9) not null default 0
+2025-08-26 11:17:20,719 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `parent_task_index`, DROP INDEX `priority_index`
+2025-08-26 11:17:21,092 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-26 14:22:06,474 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-26 14:22:07,095 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-26 14:22:07,683 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0
+2025-08-26 14:22:07,798 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `total_costing_amount` decimal(21,9) not null default 0
+2025-08-26 14:22:08,026 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-26 14:22:08,041 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-26 14:22:08,060 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-26 14:22:08,193 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0
+2025-08-26 14:22:08,208 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-26 14:22:08,372 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-26 14:22:08,939 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-26 14:22:09,049 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `title` varchar(140), MODIFY `status` varchar(140), MODIFY `total_billed_hours` varchar(140)
+2025-08-26 14:22:09,214 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `status` varchar(140)
+2025-08-26 14:22:09,230 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-26 14:22:09,247 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name`, DROP INDEX `status_index`
+2025-08-26 14:22:09,351 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-26 14:22:09,370 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-26 14:22:09,526 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-26 14:27:04,439 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-26 14:27:04,892 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-26 14:27:05,314 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0
+2025-08-26 14:27:05,422 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0
+2025-08-26 14:27:05,620 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `total_billed_amount` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-26 14:27:05,636 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-26 14:27:05,651 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-26 14:27:05,765 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0
+2025-08-26 14:27:05,781 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-26 14:27:05,925 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-26 14:27:06,391 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `actual_hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0
+2025-08-26 14:27:06,498 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` varchar(140), MODIFY `title` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140)
+2025-08-26 14:27:06,680 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0
+2025-08-26 14:27:06,695 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-26 14:27:06,710 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-26 14:27:06,817 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `expected_time` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0
+2025-08-26 14:27:06,831 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-26 14:27:06,995 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-26 14:41:14,818 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-26 14:41:15,395 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-26 14:41:15,959 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0
+2025-08-26 14:41:16,071 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0
+2025-08-26 14:41:16,281 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-26 14:41:16,296 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-26 14:41:16,309 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-26 14:41:16,431 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0
+2025-08-26 14:41:16,446 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-26 14:41:16,607 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-26 14:41:17,167 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `actual_hours` decimal(21,9) not null default 0
+2025-08-26 14:41:17,268 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `total_billed_hours` varchar(140), MODIFY `status` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `title` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0
+2025-08-26 14:41:17,437 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `status` varchar(140)
+2025-08-26 14:41:17,455 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-26 14:41:17,473 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name`, DROP INDEX `status_index`
+2025-08-26 14:41:17,573 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `expected_time` decimal(21,9) not null default 0
+2025-08-26 14:41:17,586 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `parent_task_index`, DROP INDEX `priority_index`
+2025-08-26 14:41:17,759 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-27 10:28:18,826 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-27 10:28:20,291 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-27 10:28:26,971 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0
+2025-08-27 10:28:21,246 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0
+2025-08-27 10:28:21,740 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `status` varchar(140) default 'Open', MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-27 10:28:21,783 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-27 10:28:21,829 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-27 10:28:22,099 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0
+2025-08-27 10:28:22,146 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-27 10:28:22,466 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-27 10:28:23,680 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `actual_hours` decimal(21,9) not null default 0
+2025-08-27 10:28:23,909 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `status` varchar(140), MODIFY `title` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `total_billed_hours` varchar(140), MODIFY `exchange_rate` decimal(21,9) not null default 0
+2025-08-27 10:28:24,295 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0
+2025-08-27 10:28:24,357 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-27 10:28:24,394 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-27 10:28:24,612 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `expected_time` decimal(21,9) not null default 0
+2025-08-27 10:28:24,658 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-27 10:28:25,137 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-27 10:33:04,204 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` ADD COLUMN `work_form_home` varchar(140)
+2025-08-27 10:33:04,248 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0, MODIFY `currency_ffbr` decimal(21,9) not null default 0, MODIFY `deduction_based_of_late` decimal(21,9) not null default 0, MODIFY `deduction` decimal(21,9) not null default 0, MODIFY `main_salary` decimal(21,9) not null default 0, MODIFY `bonuses` decimal(21,9) not null default 0, MODIFY `holiday_allowance` decimal(21,9) not null default 0
+2025-08-27 11:13:44,812 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCheck In Attendance` ADD COLUMN `coordinate` varchar(140)
+2025-08-27 11:30:02,506 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-27 11:30:09,131 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-27 11:30:04,112 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `hours` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0
+2025-08-27 11:30:04,563 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `title` varchar(140) default '{employee_name}', MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0
+2025-08-27 11:30:04,923 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Open', MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS project_name (`project_name`)
+2025-08-27 11:30:05,005 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `status_index`(`status`)
+2025-08-27 11:30:05,070 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `project_name_index`
+2025-08-27 11:30:05,280 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0
+2025-08-27 11:30:05,331 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` ADD INDEX `priority_index`(`priority`), ADD INDEX `parent_task_index`(`parent_task`)
+2025-08-27 11:30:05,581 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-08-27 11:30:06,359 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `actual_hours` decimal(21,9) not null default 0
+2025-08-27 11:30:06,548 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `exchange_rate` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `total_billed_hours` varchar(140), MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `title` varchar(140)
+2025-08-27 11:30:06,881 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `gross_margin_` decimal(21,9) not null default 0, MODIFY `actual_cost` decimal(21,9) not null default 0, MODIFY `percent_completed` decimal(21,9) not null default 0, MODIFY `estimated_cost_human_resources` decimal(21,9) not null default 0, MODIFY `actual_cost_goods` decimal(21,9) not null default 0, MODIFY `status` varchar(140), MODIFY `revenue` decimal(21,9) not null default 0, MODIFY `actual_cost_human_resources` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `estimated_cost_services` decimal(21,9) not null default 0, MODIFY `estimated_cost_goods` decimal(21,9) not null default 0, MODIFY `estimated_cost` decimal(21,9) not null default 0, MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `actual_cost_services` decimal(21,9) not null default 0
+2025-08-27 11:30:06,962 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` ADD INDEX `project_name_index`(`project_name`)
+2025-08-27 11:30:07,038 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` DROP INDEX `status_index`, DROP INDEX `project_name`
+2025-08-27 11:30:07,253 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `actual_time_in_hours` decimal(21,9) not null default 0, MODIFY `expected_time` decimal(21,9) not null default 0
+2025-08-27 11:30:07,299 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` DROP INDEX `priority_index`, DROP INDEX `parent_task_index`
+2025-08-27 11:30:07,735 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Configuration` MODIFY `deduction_based_of_absent` decimal(21,9) not null default 0, MODIFY `currency_ffbr` decimal(21,9) not null default 0, MODIFY `deduction_based_of_late` decimal(21,9) not null default 0, MODIFY `holiday_allowance` decimal(21,9) not null default 0, MODIFY `main_salary` decimal(21,9) not null default 0, MODIFY `bonuses` decimal(21,9) not null default 0, MODIFY `deduction` decimal(21,9) not null default 0
+2025-08-27 11:30:07,910 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Contract Form` MODIFY `main_salary` decimal(21,9) not null default 0
+2025-08-27 11:45:34,745 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCheck Out Attendance` ADD COLUMN `coordinate` varchar(140)
+2025-08-27 11:50:04,131 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-08-27 11:50:05,041 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-08-27 11:50:05,814 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet Detail` MODIFY `hours` decimal(21,9) not null default 0, MODIFY `expected_hours` decimal(21,9) not null default 0, MODIFY `base_costing_rate` decimal(21,9) not null default 0, MODIFY `base_costing_amount` decimal(21,9) not null default 0, MODIFY `billing_rate` decimal(21,9) not null default 0, MODIFY `base_billing_amount` decimal(21,9) not null default 0, MODIFY `costing_rate` decimal(21,9) not null default 0, MODIFY `billing_hours` decimal(21,9) not null default 0, MODIFY `base_billing_rate` decimal(21,9) not null default 0
+2025-08-27 11:50:11,470 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `status` varchar(140) default 'Draft', MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `exchange_rate` decimal(21,9) not null default 1.0, MODIFY `title` varchar(140) default '{employee_name}'

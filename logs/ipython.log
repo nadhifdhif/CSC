@@ -1,0 +1,13 @@
+2025-08-21 15:29:03,703 INFO ipython === bench console session ===
+2025-08-21 15:29:03,703 INFO ipython import frappe
+
+
+# Set new passwords for multiple users
+frappe.db.set_value("User", "hilang@gmail.com", "new_password", "lengser123")
+frappe.db.set_value("User", "okegas@gmail.com", "new_password", "wowo123")
+frappe.db.set_value("User", "fufufafa@gmail.com", "new_password", "gibran123")
+
+
+# Commit changes to database
+frappe.db.commit()
+2025-08-21 15:29:03,703 INFO ipython === session end ===

@@ -1,0 +1,24 @@
+set -o pipefail; /usr/bin/mariadb-dump --user=_d15e5f70fa153133 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _d15e5f70fa153133 | /usr/bin/gzip >> ./erp.local/private/backups/20250821_120002-erp_local-database.sql.gz
+
+Backup Summary for erp.local at 2025-08-21 12:00:04.780430
+Config  : ./erp.local/private/backups/20250821_120002-erp_local-site_config_backup.json 117.0B
+Database: ./erp.local/private/backups/20250821_120002-erp_local-database.sql.gz         886.1KiB
+Backup for Site erp.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_d15e5f70fa153133 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _d15e5f70fa153133 | /usr/bin/gzip >> ./erp.local/private/backups/20250825_120002-erp_local-database.sql.gz
+
+Backup Summary for erp.local at 2025-08-25 12:00:06.097932
+Config  : ./erp.local/private/backups/20250825_120002-erp_local-site_config_backup.json 117.0B
+Database: ./erp.local/private/backups/20250825_120002-erp_local-database.sql.gz         1.1MiB
+Backup for Site erp.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_d15e5f70fa153133 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _d15e5f70fa153133 | /usr/bin/gzip >> ./erp.local/private/backups/20250827_120008-erp_local-database.sql.gz
+
+Backup Summary for erp.local at 2025-08-27 12:00:15.428402
+Config  : ./erp.local/private/backups/20250827_120008-erp_local-site_config_backup.json 117.0B
+Database: ./erp.local/private/backups/20250827_120008-erp_local-database.sql.gz         1.3MiB
+Backup for Site erp.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_d15e5f70fa153133 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _d15e5f70fa153133 | /usr/bin/gzip >> ./erp.local/private/backups/20250828_000003-erp_local-database.sql.gz
+
+Backup Summary for erp.local at 2025-08-28 00:00:05.808309
+Config  : ./erp.local/private/backups/20250828_000003-erp_local-site_config_backup.json 187.0B
+Database: ./erp.local/private/backups/20250828_000003-erp_local-database.sql.gz         1.4MiB
+Backup for Site erp.local has been successfully completed

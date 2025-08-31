@@ -1,0 +1,318 @@
+2025-08-21 10:08:31,331 DEBUG cd erp && python3 -m venv env
+2025-08-21 10:08:33,447 DEBUG cd erp && /home/dipdops_greno/erp/env/bin/python -m pip install --quiet --upgrade pip
+2025-08-21 10:08:39,963 DEBUG cd erp && /home/dipdops_greno/erp/env/bin/python -m pip install --quiet wheel
+2025-08-21 10:08:43,482 LOG Getting frappe
+2025-08-21 10:08:43,483 DEBUG cd erp/apps && git clone https://github.com/frappe/frappe.git --branch version-15 --depth 1 --origin upstream
+2025-08-21 10:08:52,642 LOG Installing frappe
+2025-08-21 10:08:52,643 DEBUG cd /home/dipdops_greno/erp && /home/dipdops_greno/erp/env/bin/python -m pip install --quiet --upgrade -e /home/dipdops_greno/erp/apps/frappe 
+2025-08-21 10:10:02,595 DEBUG cd /home/dipdops_greno/erp/apps/frappe && yarn install --check-files
+2025-08-21 10:10:15,278 DEBUG cd erp && bench build
+2025-08-21 10:10:15,365 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-21 10:10:29,386 LOG setting up backups
+2025-08-21 10:10:29,425 LOG backups were set up
+2025-08-21 10:10:29,425 INFO Bench erp initialized
+2025-08-21 10:11:23,730 INFO /home/dipdops_greno/.local/bin/bench new-site erp.local
+2025-08-21 10:11:58,817 INFO /home/dipdops_greno/.local/bin/bench --site erp.local install-app erpnext
+2025-08-21 10:12:26,897 INFO /home/dipdops_greno/.local/bin/bench get-app erpnext --branch version-15
+2025-08-21 10:12:27,818 LOG Getting erpnext
+2025-08-21 10:12:27,818 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext.git --branch version-15 --depth 1 --origin upstream
+2025-08-21 10:12:38,159 LOG Installing erpnext
+2025-08-21 10:12:38,159 DEBUG cd /home/dipdops_greno/erp && /home/dipdops_greno/erp/env/bin/python -m pip install --quiet --upgrade -e /home/dipdops_greno/erp/apps/erpnext 
+2025-08-21 10:12:50,466 DEBUG cd /home/dipdops_greno/erp/apps/erpnext && yarn install --check-files
+2025-08-21 10:12:50,772 DEBUG bench build --app erpnext
+2025-08-21 10:13:00,364 INFO /home/dipdops_greno/.local/bin/bench build --app erpnext
+2025-08-21 10:13:05,426 INFO /home/dipdops_greno/.local/bin/bench --site erp.local install-app erpnext
+2025-08-21 10:13:51,471 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-21 10:13:51,701 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-21 10:13:51,709 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-21 10:13:51,709 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-21 10:13:51,716 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-21 10:14:28,807 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-21 10:14:28,981 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-21 10:14:28,984 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-21 10:14:28,990 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-21 10:14:28,992 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-21 10:14:50,789 INFO /home/dipdops_greno/.local/bin/bench use erp.local
+2025-08-21 10:14:56,868 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-21 10:14:57,098 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-21 10:14:57,110 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-21 10:14:57,111 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-21 10:14:57,119 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-21 10:24:49,903 INFO /home/dipdops_greno/.local/bin/bench use erp.local
+2025-08-21 10:24:57,654 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-21 10:24:57,870 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-21 10:24:57,884 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-21 10:24:57,885 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-21 10:24:57,890 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-21 10:27:20,850 INFO /home/dipdops_greno/.local/bin/bench get-app custom_app https://github.com/wNSYA/custom_app --branch develop
+2025-08-21 10:27:20,858 LOG Getting custom_app
+2025-08-21 10:27:20,858 DEBUG cd ./apps && git clone https://github.com/wNSYA/custom_app --branch develop --depth 1 --origin upstream
+2025-08-21 10:27:36,512 LOG Installing custom_app
+2025-08-21 10:27:36,512 DEBUG cd /home/dipdops_greno/erp && /home/dipdops_greno/erp/env/bin/python -m pip install --quiet --upgrade -e /home/dipdops_greno/erp/apps/custom_app 
+2025-08-21 10:27:39,066 DEBUG bench build --app custom_app
+2025-08-21 10:27:39,148 INFO /home/dipdops_greno/.local/bin/bench build --app custom_app
+2025-08-21 10:27:49,125 INFO /home/dipdops_greno/.local/bin/bench --site erp.local install-app custom_app
+2025-08-21 10:28:06,754 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-21 10:28:10,681 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-21 10:28:10,896 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-21 10:28:10,897 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-21 10:28:10,903 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-21 10:28:10,911 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-21 10:28:15,009 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-21 10:28:51,845 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-21 11:32:17,730 INFO /home/dipdops_greno/.local/bin/bench --site erp.local clear-cache
+2025-08-21 11:32:25,722 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-21 12:00:11,171 INFO /home/dipdops_greno/.local/bin/bench --verbose --site all backup
+2025-08-21 14:20:15,086 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-21 14:20:32,691 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-21 14:20:55,867 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-21 14:27:28,859 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-21 14:27:40,574 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-21 14:28:03,289 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-21 14:33:26,717 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-21 14:33:27,148 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-21 14:33:27,165 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-21 14:33:27,171 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-21 14:33:27,182 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-21 14:33:36,727 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-21 14:33:53,373 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-21 14:34:56,499 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-21 14:38:17,071 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-21 14:39:40,764 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-21 14:39:52,441 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-21 14:39:45,506 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-21 14:39:57,419 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-21 14:40:16,306 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-21 14:48:37,448 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-21 15:07:29,834 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-21 15:25:27,760 INFO /home/dipdops_greno/.local/bin/bench --site erp.local set-user-password hilang@gmail.com
+2025-08-21 15:25:56,669 INFO /home/dipdops_greno/.local/bin/bench --site erp.local set-user-password hilang@gmail.com
+2025-08-21 15:26:13,214 INFO /home/dipdops_greno/.local/bin/bench --site erp.local console
+2025-08-21 15:29:05,967 INFO /home/dipdops_greno/.local/bin/bench --site erp.local execute frappe.utils.password.update_password --args ["hilang@gmail.com", "lengser123"]
+2025-08-21 15:29:26,983 INFO /home/dipdops_greno/.local/bin/bench --site erp.local execute frappe.utils.password.update_password --args ["okegas@gmail.com", "wowo123"]
+2025-08-21 15:29:27,350 INFO /home/dipdops_greno/.local/bin/bench --site erp.local execute frappe.utils.password.update_password --args ["fufufafa@gmail.com", "gibran123"]
+2025-08-21 15:44:45,355 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-21 15:45:04,872 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-21 15:45:18,862 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 10:27:04,698 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 10:27:16,435 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 10:28:32,817 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 10:42:17,049 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 10:42:36,803 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 10:42:53,844 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 10:44:29,741 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 10:44:37,707 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 10:45:01,195 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 11:00:38,954 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 11:00:49,210 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 11:01:07,186 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 11:02:55,878 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 11:03:04,853 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 11:03:19,936 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 11:09:49,309 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 11:09:57,333 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 11:10:00,466 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 11:10:25,403 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 11:11:59,897 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 11:12:06,890 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 11:12:09,526 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 11:12:24,759 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 11:21:52,061 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 11:21:59,946 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 11:22:02,368 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 13:40:37,599 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 13:40:47,189 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 13:41:07,669 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 14:03:14,241 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 14:18:54,767 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 14:19:05,379 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 14:19:29,607 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 14:19:51,660 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 14:20:02,113 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 15:12:20,381 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 15:12:39,003 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 15:13:09,895 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 16:29:49,435 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 16:30:06,201 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 16:30:27,226 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 16:35:57,992 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 16:36:12,123 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 16:36:33,789 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 16:39:48,382 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 16:40:00,921 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-22 16:40:18,447 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-22 16:42:56,882 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-22 16:49:42,230 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-22 16:49:42,540 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-22 16:49:42,543 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-22 16:49:42,545 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-22 16:49:42,548 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-25 11:11:18,440 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-25 11:11:18,717 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-25 11:11:18,722 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-25 11:11:18,726 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-25 11:11:18,733 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-25 12:00:01,756 INFO /home/dipdops_greno/.local/bin/bench --verbose --site all backup
+2025-08-25 13:50:23,427 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-25 13:50:43,204 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-25 13:51:38,789 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-25 16:08:26,044 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-25 16:08:27,395 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-25 16:08:49,006 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-25 16:08:49,382 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-25 16:08:49,384 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-25 16:08:49,385 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-25 16:08:49,391 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-25 16:08:54,024 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-25 16:09:11,114 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-25 16:09:30,305 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-25 16:45:31,364 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-25 16:45:44,869 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-25 16:46:02,758 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-25 16:54:58,993 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-25 16:55:12,221 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-25 16:55:27,979 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-25 16:57:55,336 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-25 16:58:09,945 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-25 16:58:25,973 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-25 17:04:46,763 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-25 17:05:03,127 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 10:03:02,823 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-26 10:03:03,164 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-26 10:03:03,173 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-26 10:03:03,177 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-26 10:03:03,179 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-26 10:27:46,506 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-26 10:28:03,681 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-26 10:28:26,807 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 10:39:51,049 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-26 10:40:00,890 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 10:58:34,521 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-26 10:58:47,590 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 11:12:16,382 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-26 11:12:26,208 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 11:17:15,820 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-26 11:17:27,777 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 14:22:05,585 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-26 14:22:16,710 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 14:27:03,986 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-26 14:27:11,995 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 14:41:14,250 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-26 14:41:25,810 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-26 15:19:38,719 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-26 15:19:38,972 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-26 15:19:38,973 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-26 15:19:38,978 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-26 15:19:38,986 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-26 22:50:00,767 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-26 22:50:01,131 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-26 22:50:01,133 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-26 22:50:01,137 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-26 22:50:01,137 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 09:19:08,565 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-27 09:19:08,796 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 09:19:08,799 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-27 09:19:08,808 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-27 09:19:08,811 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-27 10:28:10,507 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 10:28:15,912 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-27 10:28:16,200 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-27 10:28:16,200 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-27 10:28:16,211 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 10:28:16,223 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-27 10:28:17,781 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 10:28:40,722 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 11:29:43,518 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-27 11:29:49,305 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-27 11:29:49,307 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-27 11:29:49,330 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-27 11:29:49,344 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 11:29:51,456 INFO /home/dipdops_greno/.local/bin/bench --site erp.local clear-cache
+2025-08-27 11:29:57,887 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 11:30:01,745 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 11:49:44,703 INFO /home/dipdops_greno/.local/bin/bench --site erp.local clear-cache
+2025-08-27 11:49:53,967 INFO /home/dipdops_greno/.local/bin/bench --site erp.local clear-website-cache
+2025-08-27 11:49:59,026 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-27 11:49:59,288 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-27 11:49:59,288 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-27 11:49:59,292 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 11:49:59,292 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-27 11:50:03,294 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 11:51:09,638 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 11:59:40,303 INFO /home/dipdops_greno/.local/bin/bench --site erp.local clear-website-cache
+2025-08-27 11:59:46,295 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-27 11:59:46,505 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-27 11:59:46,506 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-27 11:59:46,513 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 11:59:46,513 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-27 11:59:49,814 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 12:00:01,768 INFO /home/dipdops_greno/.local/bin/bench --verbose --site all backup
+2025-08-27 12:00:31,373 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 13:40:24,217 INFO /home/dipdops_greno/.local/bin/bench --site erp.local clear-website-cache
+2025-08-27 13:40:28,502 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 13:40:53,406 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-27 13:41:20,137 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 13:56:37,733 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-27 13:56:38,064 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-27 13:56:38,067 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-27 13:56:38,076 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-27 13:56:38,084 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 13:56:41,906 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 13:57:06,951 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-27 13:58:05,719 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 14:35:32,600 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-27 14:35:33,001 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-27 14:35:33,009 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-27 14:35:33,009 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-27 14:35:33,021 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 14:35:35,577 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 14:36:42,624 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 14:36:45,547 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-27 14:53:49,696 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 14:53:52,684 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-27 15:21:48,793 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 15:22:04,812 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 15:35:15,783 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 15:35:24,817 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 15:38:05,895 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 15:38:13,657 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 16:04:19,965 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 16:04:29,193 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-27 20:31:03,029 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-27 20:31:03,436 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-27 20:31:03,445 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-27 20:31:03,461 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-27 20:31:03,462 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-27 21:16:22,228 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 22:01:58,865 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 22:03:13,565 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-27 22:12:03,310 INFO /home/dipdops_greno/.local/bin/bench set-config google_calendar_api_key AIzaSyA-gTlXcoVuUuFBtqvoqRGwilSv8FwGSVs
+2025-08-27 22:12:14,248 INFO /home/dipdops_greno/.local/bin/bench execute custom_app.integrations.google_calendar.sync_public_holidays
+2025-08-27 22:21:42,225 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-27 22:21:54,091 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-27 22:22:19,971 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-28 00:00:02,271 INFO /home/dipdops_greno/.local/bin/bench --verbose --site all backup
+2025-08-28 00:08:19,966 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-28 00:08:29,691 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-28 00:08:47,629 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-28 00:24:00,842 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-28 00:24:15,999 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-28 00:24:32,514 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-28 00:27:29,565 INFO /home/dipdops_greno/.local/bin/bench --site erp.local migrate
+2025-08-28 00:27:37,625 INFO /home/dipdops_greno/.local/bin/bench build
+2025-08-28 00:27:51,338 INFO /home/dipdops_greno/.local/bin/bench restart
+2025-08-28 10:09:10,506 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-28 10:09:10,770 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-28 10:09:10,770 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-28 10:09:10,774 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-28 10:09:10,779 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-28 10:25:03,457 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-28 10:25:03,701 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-28 10:25:03,707 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-28 10:25:03,708 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-28 10:25:03,713 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-08-28 14:06:53,140 INFO /home/dipdops_greno/.local/bin/bench start
+2025-08-28 14:06:53,476 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-08-28 14:06:53,478 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-08-28 14:06:53,481 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-08-28 14:06:53,485 INFO /home/dipdops_greno/.local/bin/bench worker
