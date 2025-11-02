@@ -1,0 +1,58 @@
+2025-11-02 20:43:26,579 DEBUG cd csc && python3 -m venv env
+2025-11-02 20:43:28,900 DEBUG cd csc && /home/dipdops_greno/csc/env/bin/python -m pip install --quiet --upgrade pip
+2025-11-02 20:43:30,918 DEBUG cd csc && /home/dipdops_greno/csc/env/bin/python -m pip install --quiet wheel
+2025-11-02 20:43:36,422 LOG Getting frappe
+2025-11-02 20:43:36,422 DEBUG cd csc/apps && git clone https://github.com/frappe/frappe.git --branch version-15 --depth 1 --origin upstream
+2025-11-02 20:43:42,936 LOG Installing frappe
+2025-11-02 20:43:42,936 DEBUG cd /home/dipdops_greno/csc && /home/dipdops_greno/csc/env/bin/python -m pip install --quiet --upgrade -e /home/dipdops_greno/csc/apps/frappe 
+2025-11-02 20:55:24,026 DEBUG cd /home/dipdops_greno/csc/apps/frappe && yarn install --check-files
+2025-11-02 20:55:34,692 DEBUG cd csc && bench build
+2025-11-02 20:55:34,857 INFO /home/dipdops_greno/.local/bin/bench build
+2025-11-02 20:55:49,180 LOG setting up backups
+2025-11-02 20:55:49,206 LOG backups were set up
+2025-11-02 20:55:49,207 INFO Bench csc initialized
+2025-11-02 20:55:50,416 INFO A newer version of bench is available: 5.25.9 → 5.26.0
+2025-11-02 21:01:56,205 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-02 21:01:56,427 INFO /home/dipdops_greno/.local/bin/bench serve --port 8006
+2025-11-02 21:01:56,430 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-11-02 21:01:56,430 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-11-02 21:01:56,432 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-11-02 23:17:18,692 INFO /home/dipdops_greno/.local/bin/bench --site csc.localhost list-apps
+2025-11-02 23:17:25,826 INFO /home/dipdops_greno/.local/bin/bench new-site csc.localhost
+2025-11-02 23:17:36,824 INFO /home/dipdops_greno/.local/bin/bench new-site csc.localhost
+2025-11-02 23:17:44,791 INFO /home/dipdops_greno/.local/bin/bench --site csc.localhost list-apps
+2025-11-02 23:54:55,588 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-02 23:54:55,924 INFO /home/dipdops_greno/.local/bin/bench serve --port 8006
+2025-11-02 23:54:55,945 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-11-02 23:54:55,949 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-11-02 23:54:55,952 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-11-02 23:55:42,728 INFO /home/dipdops_greno/.local/bin/bench --site all list
+2025-11-02 23:56:06,152 INFO /home/dipdops_greno/.local/bin/bench --site all show
+2025-11-03 00:00:01,694 INFO /home/dipdops_greno/.local/bin/bench --verbose --site all backup
+2025-11-03 00:12:07,419 INFO /home/dipdops_greno/.local/bin/bench --site csc.localhost migrate
+2025-11-03 00:13:17,877 INFO /home/dipdops_greno/.local/bin/bench --site csc.localhost migrate
+2025-11-03 00:13:47,922 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-03 00:13:48,163 INFO /home/dipdops_greno/.local/bin/bench serve --port 8006
+2025-11-03 00:13:48,164 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-11-03 00:13:48,164 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-11-03 00:13:48,164 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-11-03 00:17:08,495 INFO /home/dipdops_greno/.local/bin/bench --site csc.localhost migrate
+2025-11-03 00:17:15,682 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-03 00:17:15,897 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-11-03 00:17:15,899 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-11-03 00:17:15,908 INFO /home/dipdops_greno/.local/bin/bench serve --port 8006
+2025-11-03 00:17:15,910 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-11-03 00:17:18,163 INFO /home/dipdops_greno/.local/bin/bench --site csc.localhost migrate
+2025-11-03 00:17:52,002 INFO /home/dipdops_greno/.local/bin/bench drop-site csc.localhost --force
+2025-11-03 00:18:01,750 INFO /home/dipdops_greno/.local/bin/bench new-site csc.localhost
+2025-11-03 00:18:35,162 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-03 00:18:42,111 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-03 00:18:42,344 INFO /home/dipdops_greno/.local/bin/bench serve --port 8006
+2025-11-03 00:18:42,349 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-11-03 00:18:42,355 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-11-03 00:18:42,364 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-11-03 00:20:00,649 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-03 00:20:00,842 INFO /home/dipdops_greno/.local/bin/bench serve --port 8006
+2025-11-03 00:20:00,853 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-11-03 00:20:00,861 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-11-03 00:20:00,877 INFO /home/dipdops_greno/.local/bin/bench watch
