@@ -204,3 +204,9 @@ Traceback with variables (most recent call last):
       errval = "Access denied for user '_045b5d304bf685d1'@'localhost' (using password: YES)"
       errorclass = <class 'pymysql.err.OperationalError'>
 pymysql.err.OperationalError: (1045, "Access denied for user '_045b5d304bf685d1'@'localhost' (using password: YES)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_045b5d304bf685d1 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _045b5d304bf685d1 | /usr/bin/gzip >> ./csc.localhost/private/backups/20251113_000005-csc_localhost-database.sql.gz
+
+Backup Summary for csc.localhost at 2025-11-13 00:00:09.833358
+Config  : ./csc.localhost/private/backups/20251113_000005-csc_localhost-site_config_backup.json 94.0B
+Database: ./csc.localhost/private/backups/20251113_000005-csc_localhost-database.sql.gz         285.8KiB
+Backup for Site csc.localhost has been successfully completed
