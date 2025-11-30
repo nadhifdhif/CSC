@@ -459,3 +459,14 @@
 2025-11-29 22:33:29,115 INFO /home/dipdops_greno/.local/bin/bench watch
 2025-11-29 22:33:29,118 INFO /home/dipdops_greno/.local/bin/bench worker
 2025-11-29 22:33:29,124 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-11-30 17:59:59,946 INFO /home/dipdops_greno/.local/bin/bench --verbose --site all backup
+2025-11-30 18:05:30,771 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-30 18:05:31,179 INFO /home/dipdops_greno/.local/bin/bench schedule
+2025-11-30 18:05:31,183 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-11-30 18:05:31,195 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-11-30 18:05:31,195 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-11-30 18:06:29,874 INFO /home/dipdops_greno/.local/bin/bench start
+2025-11-30 18:06:30,141 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2025-11-30 18:06:30,158 INFO /home/dipdops_greno/.local/bin/bench worker
+2025-11-30 18:06:30,165 INFO /home/dipdops_greno/.local/bin/bench watch
+2025-11-30 18:06:30,177 INFO /home/dipdops_greno/.local/bin/bench schedule
