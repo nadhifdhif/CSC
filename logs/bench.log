@@ -491,3 +491,22 @@
 2026-01-04 22:42:26,003 INFO /home/dipdops_greno/.local/bin/bench worker
 2026-01-04 22:42:26,004 INFO /home/dipdops_greno/.local/bin/bench watch
 2026-01-04 22:42:26,011 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2026-01-08 22:19:50,819 INFO /home/dipdops_greno/.local/bin/bench start
+2026-01-08 22:19:51,243 INFO /home/dipdops_greno/.local/bin/bench worker
+2026-01-08 22:19:51,261 INFO /home/dipdops_greno/.local/bin/bench serve --port 8004
+2026-01-08 22:19:51,262 INFO /home/dipdops_greno/.local/bin/bench watch
+2026-01-08 22:19:51,265 INFO /home/dipdops_greno/.local/bin/bench schedule
+2026-01-08 22:20:25,738 INFO /home/dipdops_greno/.local/bin/bench update
+2026-01-08 22:20:27,941 WARNING shallow_clone is set in your bench config.
+However without passing the --reset flag, your repositories will be unshallowed.
+To avoid this, cancel this operation and run `bench update --reset`.
+
+Consider the consequences of `git reset --hard` on your apps before you run that.
+To avoid seeing this warning, set shallow_clone to false in your common_site_config.json
+		
+2026-01-08 22:20:47,179 INFO /home/dipdops_greno/.local/bin/bench
+2026-01-08 22:20:55,417 INFO /home/dipdops_greno/.local/bin/bench build
+2026-01-08 22:21:34,097 INFO /home/dipdops_greno/.local/bin/bench
+2026-01-08 22:21:46,619 INFO /home/dipdops_greno/.local/bin/bench migrate
+2026-01-08 22:22:04,426 INFO /home/dipdops_greno/.local/bin/bench restart
+2026-01-08 22:22:06,154 INFO A newer version of bench is available: 5.25.9 → 5.28.0
